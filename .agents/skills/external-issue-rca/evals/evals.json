@@ -1,0 +1,45 @@
+{
+  "skill_name": "external-issue-rca",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "me falla PAYM-T2080 con 'Purchase V2 failed: DP-4500 Payment was declined... processor_error code 05 TRANSACAO NAO APROVADA'. Tengo el transaction id 76c9780f-fcb3-4df9-98c1-61e44bcbfa57, revisa en cloudwatch si es del PSP o nuestro",
+      "expected_output": "Veredicto External (Getnet sandbox / emisor Visa), confirmado: request de DEUNA idéntico al último aprobado (A/B), Visa ...1112 denegada siempre desde 2026-10-28 ~03:54Z mientras Mastercard aprueba; IDs para escalar (acquirer_transaction_id 142330168437, seller_id); no cambiar la tarjeta del test.",
+      "files": [],
+      "assertions": [
+        "El veredicto nombra como responsable principal a un externo (Getnet / emisor Visa sandbox), no a DEUNA",
+        "La certeza es 'Confirmado' y se apoya en un A/B request sano vs fallido (body/mapping/endpoint iguales)",
+        "Ubica el corte entre el 27-oct ~14:54Z y el 28-oct ~03:54Z (último Visa aprobado / primer rechazo)",
+        "Menciona que Mastercard del mismo PSP sigue aprobando (alcance acotado a Visa)",
+        "Incluye IDs para escalar: acquirer_transaction_id 142330168437 y/o seller_id a842c88a",
+        "No recomienda cambiar la tarjeta del test a Mastercard para que pase",
+        "Ninguna consulta usó ventana > 30 min ni Insights > 14 días sin --force justificado",
+        "Reporta los GB escaneados en el reporte",
+        "No ejecutó el test (ya tenía transaction_id)",
+        "El reporte no contiene API keys, tokens ni headers Authorization sin redactar"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Revisa el test case ENTP1-T2043, creo que es un external issue de PayU pero no tengo transaction id",
+      "expected_output": "Ejecuta el test, extrae el transaction_id del trace, encuentra en payconnect-stg el SecurityFault 'invalid security token' de PayU con PSE, histórico sin respuestas sanas desde 2026-10-20; veredicto Mixto con principal External (PayU) y secundario DEUNA probable (mapping devuelve pending con redirect '<no value>').",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "PAYM-T2112 de getnet a veces falla en la regresión, sospecho que es getnet. Puedes revisar si es externo?",
+      "expected_output": "Ejecuta el test; si pasa, dice que no se reproduce, revisa el histórico de Getnet Mastercard en payconnect-stg y no culpa al PSP sin evidencia; pide el transaction_id de la corrida fallida si hace falta. Veredicto no confirmado como External.",
+      "files": [],
+      "assertions": [
+        "Ejecuta el test PAYM-T2112 y reporta su resultado real",
+        "Si el test pasa, dice explícitamente que el fallo no se reproduce",
+        "No declara External 'Confirmado' sin una transacción fallida analizada",
+        "Revisa el histórico de Getnet en payconnect-stg con rango ≤ 14 días",
+        "Pide al usuario el transaction_id/corrida fallida o explica qué falta para confirmar",
+        "Ninguna consulta usó ventana > 30 min ni Insights > 14 días sin --force justificado",
+        "Reporta los GB escaneados en el reporte",
+        "Copió el trace.zip fuera de test-results antes de analizarlo"
+      ]
+    }
+  ]
+}
