@@ -23,7 +23,7 @@ const SCENARIO_ID = 'IHUB-T100';
 // This exercises the merchant-granularity integration-hub trigger flow (see
 // payconnect-testing-hub's TRD "Trigger E2E con granularidad merchant"): it
 // runs the scenario resolved by the hub for this test case id against
-// whatever PSP this merchant's version is assigned to, using the
+// whatever psp this merchant's version is assigned to, using the
 // card/credential the hub resolved for it via /connections/e2e-config (see
 // @support/ihub/loadConfig, called from global.setup.ts).
 const missingVars = getMissingIhubEnvVars();
@@ -36,7 +36,7 @@ test.describe(`Purchase denied - error.code and error.message present in the res
         true,
         missingVars.length > 0
           ? `Missing required environment variables: ${missingVars.join(', ')}. ` +
-              'This spec only runs as part of the merchant-granularity integration-hub trigger.'
+          'This spec only runs as part of the merchant-granularity integration-hub trigger.'
           : `No "${SCENARIO_ID}" scenario configured for this merchant/PSP in integration-hub.`
       );
     });

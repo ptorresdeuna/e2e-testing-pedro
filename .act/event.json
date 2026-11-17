@@ -1,0 +1,14 @@
+{
+  "action": "run-e2e-integration-hub",
+  "client_payload": {
+    "callback_url": "connections/d9650a89-5400-4743-9e73-a5e5db480fee/callback-e2e",
+    "grep": "@ihub-general|@ihub-dlocal",
+    "processor_id": "5",
+    "processor_name": "dlocal",
+    "version_id": "d9650a89-5400-4743-9e73-a5e5db480fee",
+    "testing_hub_api_key": "fcb2913f489f6ac427d2b8e1e8254708a78cdcda5a7f143b4d60f96cdedb508b",
+    "testing_hub_url": "http://192.168.65.254:8080/payconnect-testing-hub/api/v1",
+    "version": "v1.0.0",
+    "branch": "main"
+  }
+}
