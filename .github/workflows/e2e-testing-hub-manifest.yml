@@ -24,7 +24,7 @@ jobs:
 
       - run: npm ci --no-audit --no-fund
 
-      # Lists the tests to a file to avoid ENOBUFS on large suites.
+      # Lists the tests to a file to avoid ENOBUFS on large suites
       - name: List tests to file
         run: npx playwright test playwright/tests/integration-hub --list --reporter=json --project=chromium 2>/dev/null > "${RUNNER_TEMP}/pw-list.json"
 
