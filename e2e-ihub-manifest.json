@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T23:29:55.234Z",
+  "generated_at": "2026-11-18T00:41:42.676Z",
   "schema_version": "2",
   "total": 11,
   "tests": [
@@ -8,77 +8,77 @@
       "file": "integration-hub/cards/purchase/IHUB-T100.spec.ts",
       "ihub_tag": "@IHUB-T100",
       "tags": ["@IHUB-T100"],
-      "title": "Merchant E2E - environment validation"
+      "title": "Purchase denied - error.code and error.message present in the response"
     },
     {
       "id": "IHUB-T101",
       "file": "integration-hub/cards/purchase/IHUB-T101.spec.ts",
       "ihub_tag": "@IHUB-T101",
       "tags": ["@IHUB-T101"],
-      "title": "Merchant E2E - environment validation"
+      "title": "Checkout UI shows rejection message and allows retry"
     },
     {
       "id": "IHUB-T102",
       "file": "integration-hub/cards/purchase/IHUB-T102.spec.ts",
       "ihub_tag": "@IHUB-T102",
       "tags": ["@IHUB-T102"],
-      "title": "Merchant E2E - environment validation"
+      "title": "Order status is 'denied' in Admin and via API after the rejection"
     },
     {
       "id": "IHUB-T103",
       "file": "integration-hub/cards/purchase/IHUB-T103.spec.ts",
       "ihub_tag": "@IHUB-T103",
       "tags": ["@IHUB-T103"],
-      "title": "Merchant E2E - environment validation"
+      "title": "Purchase processed without 3DS"
     },
     {
       "id": "IHUB-T104",
       "file": "integration-hub/cards/purchase/IHUB-T104.spec.ts",
       "ihub_tag": "@IHUB-T104",
       "tags": ["@IHUB-T104"],
-      "title": "Merchant E2E - environment validation"
+      "title": "Processed transaction persists correctly in Admin and API"
     },
     {
       "id": "IHUB-T105",
       "file": "integration-hub/cards/purchase/IHUB-T105.spec.ts",
       "ihub_tag": "@IHUB-T105",
       "tags": ["@IHUB-T105"],
-      "title": "Merchant E2E - environment validation"
+      "title": "Purchase processed via DEUNA MPI 3DS challenge"
     },
     {
       "id": "IHUB-T106",
       "file": "integration-hub/cards/purchase/IHUB-T106.spec.ts",
       "ihub_tag": "@IHUB-T106",
       "tags": ["@IHUB-T106"],
-      "title": "Merchant E2E - environment validation"
+      "title": "Purchase processed via DEUNA MPI 3DS frictionless"
     },
     {
       "id": "IHUB-T107",
       "file": "integration-hub/cards/purchase/IHUB-T107.spec.ts",
       "ihub_tag": "@IHUB-T107",
       "tags": ["@IHUB-T107"],
-      "title": "Merchant E2E - environment validation"
+      "title": "Purchase denied in authorization after a successful DEUNA MPI 3DS challenge"
     },
     {
       "id": "IHUB-T108",
       "file": "integration-hub/cards/purchase/IHUB-T108.spec.ts",
       "ihub_tag": "@IHUB-T108",
       "tags": ["@IHUB-T108"],
-      "title": "Merchant E2E - environment validation"
+      "title": "Purchase denied in authorization after a successful DEUNA MPI 3DS frictionless authentication"
     },
     {
       "id": "IHUB-T109",
       "file": "integration-hub/cards/purchase/IHUB-T109.spec.ts",
       "ihub_tag": "@IHUB-T109",
       "tags": ["@IHUB-T109"],
-      "title": "Merchant E2E - environment validation"
+      "title": "3DS authentication data (ECI/CAVV) persists on the order after authorization"
     },
     {
       "id": "IHUB-T110",
       "file": "integration-hub/cards/purchase/IHUB-T110.spec.ts",
       "ihub_tag": "@IHUB-T110",
       "tags": ["@IHUB-T110"],
-      "title": "Merchant E2E - environment validation"
+      "title": "Purchase denied by a DEUNA MPI 3DS authentication failure, before authorization"
     }
   ]
 }
