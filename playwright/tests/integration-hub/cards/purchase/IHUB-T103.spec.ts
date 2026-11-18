@@ -32,7 +32,7 @@ const scenario = missingVars.length === 0 ? getScenario(SCENARIO_ID) : undefined
 
 test.describe(`Purchase processed without 3DS`, () => {
   if (!scenario) {
-    test(`@${SCENARIO_ID} Merchant E2E - environment validation`, async () => {
+    test(`@${SCENARIO_ID} Purchase processed without 3DS`, async () => {
       test.skip(
         true,
         missingVars.length > 0

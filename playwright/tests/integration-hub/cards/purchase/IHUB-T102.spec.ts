@@ -33,7 +33,7 @@ const scenario = missingVars.length === 0 ? getScenario(SCENARIO_ID) : undefined
 
 test.describe(`Order status is 'denied' in Admin and via API after the rejection`, () => {
   if (!scenario) {
-    test(`@${SCENARIO_ID} Merchant E2E - environment validation`, async () => {
+    test(`@${SCENARIO_ID} Order status is 'denied' in Admin and via API after the rejection`, async () => {
       test.skip(
         true,
         missingVars.length > 0

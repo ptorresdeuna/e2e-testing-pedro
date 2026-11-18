@@ -32,7 +32,7 @@ const scenario = missingVars.length === 0 ? getScenario(SCENARIO_ID) : undefined
 
 test.describe(`3DS authentication data (ECI/CAVV) persists on the order after authorization`, () => {
   if (!scenario) {
-    test(`@${SCENARIO_ID} Merchant E2E - environment validation`, async () => {
+    test(`@${SCENARIO_ID} 3DS authentication data (ECI/CAVV) persists on the order after authorization`, async () => {
       test.skip(
         true,
         missingVars.length > 0

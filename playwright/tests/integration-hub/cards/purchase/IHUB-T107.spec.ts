@@ -33,7 +33,7 @@ const scenario = missingVars.length === 0 ? getScenario(SCENARIO_ID) : undefined
 
 test.describe(`Purchase denied in authorization after a successful DEUNA MPI 3DS challenge`, () => {
   if (!scenario) {
-    test(`@${SCENARIO_ID} Merchant E2E - environment validation`, async () => {
+    test(`@${SCENARIO_ID} Purchase denied in authorization after a successful DEUNA MPI 3DS challenge`, async () => {
       test.skip(
         true,
         missingVars.length > 0

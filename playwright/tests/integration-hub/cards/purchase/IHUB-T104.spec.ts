@@ -33,7 +33,7 @@ const scenario = missingVars.length === 0 ? getScenario(SCENARIO_ID) : undefined
 
 test.describe(`Processed transaction persists correctly in Admin and API`, () => {
   if (!scenario) {
-    test(`@${SCENARIO_ID} Merchant E2E - environment validation`, async () => {
+    test(`@${SCENARIO_ID} Processed transaction persists correctly in Admin and API`, async () => {
       test.skip(
         true,
         missingVars.length > 0

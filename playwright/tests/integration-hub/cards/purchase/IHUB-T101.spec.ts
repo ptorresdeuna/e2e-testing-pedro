@@ -31,7 +31,7 @@ const scenario = missingVars.length === 0 ? getScenario(SCENARIO_ID) : undefined
 
 test.describe(`Checkout UI shows rejection message and allows retry`, () => {
   if (!scenario) {
-    test(`@${SCENARIO_ID} Merchant E2E - environment validation`, async () => {
+    test(`@${SCENARIO_ID} Checkout UI shows rejection message and allows retry`, async () => {
       test.skip(
         true,
         missingVars.length > 0
