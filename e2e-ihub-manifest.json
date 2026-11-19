@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T00:38:53.849Z",
+  "generated_at": "2026-11-19T00:42:33.937Z",
   "schema_version": "2",
   "total": 11,
   "tests": [
@@ -7,110 +7,77 @@
       "id": "IHUB-T100",
       "file": "integration-hub/cards/purchase/IHUB-T100.spec.ts",
       "ihub_tag": "@ihub-demo1",
-      "tags": [
-        "@IHUB-T100",
-        "@ihub-demo1"
-      ],
+      "tags": ["@IHUB-T100", "@ihub-demo1"],
       "title": "Purchase denied - error.code and error.message present in the response"
     },
     {
       "id": "IHUB-T101",
       "file": "integration-hub/cards/purchase/IHUB-T101.spec.ts",
-      "ihub_tag": "@ihub-general",
-      "tags": [
-        "@IHUB-T101",
-        "@ihub-general"
-      ],
+      "ihub_tag": "@ihub-demo1",
+      "tags": ["@IHUB-T101", "@ihub-demo1"],
       "title": "Checkout UI shows rejection message and allows retry"
     },
     {
       "id": "IHUB-T102",
       "file": "integration-hub/cards/purchase/IHUB-T102.spec.ts",
       "ihub_tag": "@ihub-general",
-      "tags": [
-        "@IHUB-T102",
-        "@ihub-general"
-      ],
+      "tags": ["@IHUB-T102", "@ihub-general"],
       "title": "Order status is 'denied' in Admin and via API after the rejection"
     },
     {
       "id": "IHUB-T103",
       "file": "integration-hub/cards/purchase/IHUB-T103.spec.ts",
       "ihub_tag": "@ihub-general",
-      "tags": [
-        "@IHUB-T103",
-        "@ihub-general"
-      ],
+      "tags": ["@IHUB-T103", "@ihub-general"],
       "title": "Purchase processed without 3DS"
     },
     {
       "id": "IHUB-T104",
       "file": "integration-hub/cards/purchase/IHUB-T104.spec.ts",
       "ihub_tag": "@ihub-general",
-      "tags": [
-        "@IHUB-T104",
-        "@ihub-general"
-      ],
+      "tags": ["@IHUB-T104", "@ihub-general"],
       "title": "Processed transaction persists correctly in Admin and API"
     },
     {
       "id": "IHUB-T105",
       "file": "integration-hub/cards/purchase/IHUB-T105.spec.ts",
       "ihub_tag": "@ihub-general",
-      "tags": [
-        "@IHUB-T105",
-        "@ihub-general"
-      ],
+      "tags": ["@IHUB-T105", "@ihub-general"],
       "title": "Purchase processed via DEUNA MPI 3DS challenge"
     },
     {
       "id": "IHUB-T106",
       "file": "integration-hub/cards/purchase/IHUB-T106.spec.ts",
       "ihub_tag": "@ihub-general",
-      "tags": [
-        "@IHUB-T106",
-        "@ihub-general"
-      ],
+      "tags": ["@IHUB-T106", "@ihub-general"],
       "title": "Purchase processed via DEUNA MPI 3DS frictionless"
     },
     {
       "id": "IHUB-T107",
       "file": "integration-hub/cards/purchase/IHUB-T107.spec.ts",
       "ihub_tag": "@ihub-general",
-      "tags": [
-        "@IHUB-T107",
-        "@ihub-general"
-      ],
+      "tags": ["@IHUB-T107", "@ihub-general"],
       "title": "Purchase denied in authorization after a successful DEUNA MPI 3DS challenge"
     },
     {
       "id": "IHUB-T108",
       "file": "integration-hub/cards/purchase/IHUB-T108.spec.ts",
       "ihub_tag": "@ihub-general",
-      "tags": [
-        "@IHUB-T108",
-        "@ihub-general"
-      ],
+      "tags": ["@IHUB-T108", "@ihub-general"],
       "title": "Purchase denied in authorization after a successful DEUNA MPI 3DS frictionless authentication"
     },
     {
       "id": "IHUB-T109",
       "file": "integration-hub/cards/purchase/IHUB-T109.spec.ts",
       "ihub_tag": "@ihub-general",
-      "tags": [
-        "@IHUB-T109",
-        "@ihub-general"
-      ],
+      "tags": ["@IHUB-T109", "@ihub-general"],
       "title": "3DS authentication data (ECI/CAVV) persists on the order after authorization"
     },
     {
       "id": "IHUB-T110",
       "file": "integration-hub/cards/purchase/IHUB-T110.spec.ts",
       "ihub_tag": "@ihub-general",
-      "tags": [
-        "@IHUB-T110",
-        "@ihub-general"
-      ],
+      "tags": ["@IHUB-T110", "@ihub-general"],
       "title": "Purchase denied by a DEUNA MPI 3DS authentication failure, before authorization"
     }
   ]
