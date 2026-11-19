@@ -33,15 +33,19 @@ const scenario = missingVars.length === 0 ? getScenario(SCENARIO_ID) : undefined
 
 test.describe(`Processed transaction persists correctly in Admin and API`, () => {
   if (!scenario) {
-    test(`@${SCENARIO_ID} Processed transaction persists correctly in Admin and API`, async () => {
-      test.skip(
-        true,
-        missingVars.length > 0
-          ? `Missing required environment variables: ${missingVars.join(', ')}. ` +
-              'This spec only runs as part of the merchant-granularity integration-hub trigger.'
-          : `No "${SCENARIO_ID}" scenario configured for this merchant/PSP in integration-hub.`
-      );
-    });
+    test(
+      `@${SCENARIO_ID} Processed transaction persists correctly in Admin and API`,
+      { tag: ['@ihub-general'] },
+      async () => {
+        test.skip(
+          true,
+          missingVars.length > 0
+            ? `Missing required environment variables: ${missingVars.join(', ')}. ` +
+                'This spec only runs as part of the merchant-granularity integration-hub trigger.'
+            : `No "${SCENARIO_ID}" scenario configured for this merchant/PSP in integration-hub.`
+        );
+      }
+    );
     return;
   }
 

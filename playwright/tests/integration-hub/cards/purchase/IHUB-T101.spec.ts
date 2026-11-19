@@ -31,15 +31,19 @@ const scenario = missingVars.length === 0 ? getScenario(SCENARIO_ID) : undefined
 
 test.describe(`Checkout UI shows rejection message and allows retry`, () => {
   if (!scenario) {
-    test(`@${SCENARIO_ID} Checkout UI shows rejection message and allows retry`, async () => {
-      test.skip(
-        true,
-        missingVars.length > 0
-          ? `Missing required environment variables: ${missingVars.join(', ')}. ` +
-              'This spec only runs as part of the merchant-granularity integration-hub trigger.'
-          : `No "${SCENARIO_ID}" scenario configured for this merchant/PSP in integration-hub.`
-      );
-    });
+    test(
+      `@${SCENARIO_ID} Checkout UI shows rejection message and allows retry`,
+      { tag: ['@ihub-demo1'] },
+      async () => {
+        test.skip(
+          true,
+          missingVars.length > 0
+            ? `Missing required environment variables: ${missingVars.join(', ')}. ` +
+            'This spec only runs as part of the merchant-granularity integration-hub trigger.'
+            : `No "${SCENARIO_ID}" scenario configured for this merchant/PSP in integration-hub.`
+        );
+      }
+    );
     return;
   }
 

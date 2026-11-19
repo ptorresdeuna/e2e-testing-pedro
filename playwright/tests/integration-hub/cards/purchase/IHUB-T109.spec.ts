@@ -32,15 +32,19 @@ const scenario = missingVars.length === 0 ? getScenario(SCENARIO_ID) : undefined
 
 test.describe(`3DS authentication data (ECI/CAVV) persists on the order after authorization`, () => {
   if (!scenario) {
-    test(`@${SCENARIO_ID} 3DS authentication data (ECI/CAVV) persists on the order after authorization`, async () => {
-      test.skip(
-        true,
-        missingVars.length > 0
-          ? `Missing required environment variables: ${missingVars.join(', ')}. ` +
-              'This spec only runs as part of the merchant-granularity integration-hub trigger.'
-          : `No "${SCENARIO_ID}" scenario configured for this merchant/PSP in integration-hub.`
-      );
-    });
+    test(
+      `@${SCENARIO_ID} 3DS authentication data (ECI/CAVV) persists on the order after authorization`,
+      { tag: ['@ihub-general'] },
+      async () => {
+        test.skip(
+          true,
+          missingVars.length > 0
+            ? `Missing required environment variables: ${missingVars.join(', ')}. ` +
+                'This spec only runs as part of the merchant-granularity integration-hub trigger.'
+            : `No "${SCENARIO_ID}" scenario configured for this merchant/PSP in integration-hub.`
+        );
+      }
+    );
     return;
   }
 

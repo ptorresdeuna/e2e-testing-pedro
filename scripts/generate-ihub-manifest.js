@@ -84,8 +84,11 @@ const tests = [];
 for (const spec of allSpecs) {
   const normalizedTags = normalizeTags(spec.tags);
 
-  // Buscar el tag @IHUB--* (si no tiene, este test no pertenece al manifest)
-  const ihubTag = normalizedTags.find((t) => t.startsWith('@IHUB-'));
+  // Buscar el tag @ihub-* (si no tiene, este test no pertenece al manifest).
+  // Nota: NO usar '@IHUB-' (mayúsculas) aquí — eso coincide con el tag que
+  // Playwright autogenera a partir del ID en el título (p. ej. "@IHUB-T100"),
+  // que es igual al `id` y no la clasificación global/PSP que necesitamos.
+  const ihubTag = normalizedTags.find((t) => t.startsWith('@ihub-'));
   if (!ihubTag) continue;
 
   // Extraer ID de Zephyr del título
@@ -120,8 +123,8 @@ const manifest = {
 const outPath = path.join(process.cwd(), 'e2e-ihub-manifest.json');
 fs.writeFileSync(outPath, JSON.stringify(manifest, null, 2));
 
-const globals = tests.filter((t) => t.ihub_tag === '@@ihub-general').length;
-const specifics = tests.filter((t) => t.ihub_tag !== '@@ihub-general').length;
+const globals = tests.filter((t) => t.ihub_tag === '@ihub-general').length;
+const specifics = tests.filter((t) => t.ihub_tag !== '@ihub-general').length;
 console.log(`Manifest generado: ${tests.length} tests con @i-hub-* → ${outPath}`);
 console.log(`  @i-hub-global: ${globals}`);
 console.log(`  @i-hub-{psp}:  ${specifics}`);

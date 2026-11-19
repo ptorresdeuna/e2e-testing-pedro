@@ -31,15 +31,19 @@ const scenario = missingVars.length === 0 ? getScenario(SCENARIO_ID) : undefined
 
 test.describe(`Purchase denied - error.code and error.message present in the response`, () => {
   if (!scenario) {
-    test(`@${SCENARIO_ID} Purchase denied - error.code and error.message present in the response`, async () => {
-      test.skip(
-        true,
-        missingVars.length > 0
-          ? `Missing required environment variables: ${missingVars.join(', ')}. ` +
-          'This spec only runs as part of the merchant-granularity integration-hub trigger.'
-          : `No "${SCENARIO_ID}" scenario configured for this merchant/PSP in integration-hub.`
-      );
-    });
+    test(
+      `@${SCENARIO_ID} Purchase denied - error.code and error.message present in the response`,
+      { tag: ['@ihub-demo1'] },
+      async () => {
+        test.skip(
+          true,
+          missingVars.length > 0
+            ? `Missing required environment variables: ${missingVars.join(', ')}. ` +
+            'This spec only runs as part of the merchant-granularity integration-hub trigger.'
+            : `No "${SCENARIO_ID}" scenario configured for this merchant/PSP in integration-hub.`
+        );
+      }
+    );
     return;
   }
 

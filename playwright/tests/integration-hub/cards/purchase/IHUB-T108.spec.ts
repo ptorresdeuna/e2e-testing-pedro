@@ -31,15 +31,19 @@ const scenario = missingVars.length === 0 ? getScenario(SCENARIO_ID) : undefined
 
 test.describe(`Purchase denied in authorization after a successful DEUNA MPI 3DS frictionless authentication`, () => {
   if (!scenario) {
-    test(`@${SCENARIO_ID} Purchase denied in authorization after a successful DEUNA MPI 3DS frictionless authentication`, async () => {
-      test.skip(
-        true,
-        missingVars.length > 0
-          ? `Missing required environment variables: ${missingVars.join(', ')}. ` +
-              'This spec only runs as part of the merchant-granularity integration-hub trigger.'
-          : `No "${SCENARIO_ID}" scenario configured for this merchant/PSP in integration-hub.`
-      );
-    });
+    test(
+      `@${SCENARIO_ID} Purchase denied in authorization after a successful DEUNA MPI 3DS frictionless authentication`,
+      { tag: ['@ihub-general'] },
+      async () => {
+        test.skip(
+          true,
+          missingVars.length > 0
+            ? `Missing required environment variables: ${missingVars.join(', ')}. ` +
+                'This spec only runs as part of the merchant-granularity integration-hub trigger.'
+            : `No "${SCENARIO_ID}" scenario configured for this merchant/PSP in integration-hub.`
+        );
+      }
+    );
     return;
   }
 
